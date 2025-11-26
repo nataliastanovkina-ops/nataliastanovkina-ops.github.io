@@ -83,29 +83,6 @@
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     }
 
-    body {
-        padding-top: 90px; /* Начальная высота хедера + отступ */
-    }
-
-    body.scrolled {
-        padding-top: 70px; /* Уменьшенный отступ при скролле */
-    }
-
-    /* JavaScript для добавления класса при скролле */
-    <script>
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            const body = document.querySelector('body');
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-                body.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-                body.classList.remove('scrolled');
-            }
-        });
-        }
-
         .navbar {
             display: flex;
             justify-content: space-between;
