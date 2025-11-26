@@ -64,15 +64,46 @@
         }
 
         header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(26, 26, 46, 0.9);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 15px 0;
-            transition: var(--transition);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(26, 26, 46, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        padding: 20px 0;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Компактный хедер при прокрутке */
+    header.scrolled {
+        padding: 10px 0;
+        background: rgba(26, 26, 46, 0.98);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    body {
+        padding-top: 90px; /* Начальная высота хедера + отступ */
+    }
+
+    body.scrolled {
+        padding-top: 70px; /* Уменьшенный отступ при скролле */
+    }
+
+    /* JavaScript для добавления класса при скролле */
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            const body = document.querySelector('body');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+                body.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+                body.classList.remove('scrolled');
+            }
+        });
         }
 
         .navbar {
